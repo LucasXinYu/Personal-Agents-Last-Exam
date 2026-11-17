@@ -39,6 +39,13 @@
 
 **Evaluation plan.** The provisional local threshold is nDCG@5 of at least 0.80 with all required ID-level checks. The proposed full rubric allocates 70 points to ranking quality, 20 to need coverage and 10 to grounded reasons. It also requires five valid IDs, the ownership-specific shopping rule and no critical top-three mismatch. Independent judges, a full tool and memory replay, and the designated GPT, Claude and Gemini validations are pending. Freeze the rubric and judgments before the official runs.
 
+**Can the history settle the order?** A separate ten-post diagnostic asks the father’s assistant to shortlist two Sunday rides based on what his daughter picked on two earlier outings. The father paid for two families. His receipts show which activities each child could choose at the same price, and a later family message identifies his daughter’s choices. Her schedule and the ownership of a rescheduled ticket determine which rides she can attend.
+
+- When she chose one available activity over another, recommend them in the order supported by that choice. Counting how many times she did each activity can miss a direct comparison.
+- When she chose the same activity over each of two alternatives, recommend it first. Accept either a focused question or an explicit tie for second: her history does not say which of the other two she would pick. The two readers will check these judgments separately from the 24-post nDCG@5 rubric.
+
+In an exploratory pilot on one synthetic family, gpt-6-astra (medium) got both posts in order in 3/4 determined cases and Claude Fable 5.2 (Medium) in 4/4. Both recognized the separate unresolved second place. Each model used one prior conversation about splitting expenses, then five fresh recommendation sessions, each able to retrieve that conversation. These are design controls; difficulty on the full PALE task remains unverified.
+
 For a future study over independently sampled families, pre-register the mean within-family nDCG@5 difference versus a frozen full-context baseline. Average repeated variants within family. Use a paired randomization test, a family-level 95% bootstrap interval and a predeclared minimum useful gain of 0.05. The current one-family pilot establishes no population-level significance.
 
 Example sources: [family ride planning](https://www.cyclinguk.org/guide/family-bike-rides), [children's helmet options](https://www.giro.com/kids/cycling/helmets/), [technical cornering](https://www.rei.com/learn/expert-advice/cornering-techniques.html), [full Lakeside Way circuit](https://www.forestryengland.uk/kielder-forest/lakeside-way-kielder-forest).
